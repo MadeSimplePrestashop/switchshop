@@ -21,6 +21,7 @@ class switchshop extends Module {
         $this->author = 'kuzmany.biz/prestashop';
         $this->need_instance = 0;
         $this->bootstrap = true;
+        $this->module_key = '854c86446b6e30eb67ebfc8376748e01';
 
         parent::__construct();
 
@@ -31,7 +32,6 @@ class switchshop extends Module {
     public function install() {
         Configuration::updateValue(switchshop::INPUT_USE, 'all');
         Configuration::updateValue(switchshop::INPUT_TEMPLATE, 'dropdown');
-        Configuration::updateValue(switchshop::INPUT_SEPARATOR, '/');
         return parent::install() && $this->registerHook('displayNav');
     }
 
