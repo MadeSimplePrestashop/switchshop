@@ -132,7 +132,7 @@ class switchshop extends Module {
                     array(
                         'type' => 'text',
                         'label' => $this->l('Separator'),
-                        'size' => 5,
+                        'class' => 'fixed-width-s',
                         'name' => switchshop::INPUT_SEPARATOR,
                         'default_value' => '/',
                         'desc' => $this->l('Only for separator template')
