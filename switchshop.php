@@ -17,7 +17,7 @@ class switchshop extends Module {
     public function __construct() {
         $this->name = 'switchshop';
         $this->tab = 'front_office_features';
-        $this->version = '1.0';
+        $this->version = '1.0.1';
         $this->author = 'kuzmany.biz/prestashop';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -49,9 +49,9 @@ class switchshop extends Module {
         else
             Cache::store(__FUNCTION__, true);
 
-        if (Configuration::get(switchshop::INPUT_USE) == 'group')
-            $shops = Shop::getShops(Shop::getContextShopGroup()->id);
-        else
+        if (Configuration::get(switchshop::INPUT_USE) == 'group') {
+            $shops = Shop::getShops(1, Shop::getContextShopGroup()->id);
+        } else
             $shops = Shop::getShops();
 
         foreach ($shops as $key => $shop) {
